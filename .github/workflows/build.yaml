@@ -16,4 +16,4 @@ jobs:
           context: .
           file: ./Dockerfile
           push: false
-        tags: jenkins-plus:dev
+          tags: jenkins-plus:dev
