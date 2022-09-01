@@ -18,7 +18,7 @@ jobs:
         with:
           images: ghcr.io/yteraoka/jenkins-plus
           tags: |
-            type=raw
+            type=ref,event=tag
             type=sha
 
       - name: Login to Docker Hub
