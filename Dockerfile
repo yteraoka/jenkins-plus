@@ -13,4 +13,9 @@ RUN apt-get update \
  && apt-get clean \
  && rm -rf /var/lib/apt/lists/*
 
+# host の docker group の GID が 412 という前提で jenkins ユーザーが
+# /var/run/docker.sock にアクセスできるようにする
+RUN /usr/sbin/groupmod --gid 412 docker
+RUN /usr/sbin/usermod --append --groups docker jenkins 
+
 USER jenkins
