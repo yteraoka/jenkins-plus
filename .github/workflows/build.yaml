@@ -10,7 +10,7 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Build and push
+      - name: Build only
         uses: docker/build-push-action@v3
         with:
           context: .
