@@ -21,12 +21,12 @@ jobs:
           push: false
           tags: jenkins-plus:dev
 
-#      - name: Dockle
-#        uses: erzz/dockle-action@v1
-#        with:
-#          image: jenkins-plus:dev
-#          exit-code: '1'
-#          failure-threshold: fatal
+      - name: Dockle
+        uses: erzz/dockle-action@v1
+        with:
+          image: jenkins-plus:dev
+          exit-code: '1'
+          failure-threshold: fatal
 
       - name: Trivy
         uses: aquasecurity/trivy-action@master
