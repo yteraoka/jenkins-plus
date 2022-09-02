@@ -13,6 +13,7 @@ jobs:
         with:
           dockerfile: Dockerfile
           failure-threshold: error
+          verbose: true
 
   build:
     name: Build container image
