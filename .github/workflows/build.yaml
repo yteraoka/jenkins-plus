@@ -17,3 +17,20 @@ jobs:
           file: ./Dockerfile
           push: false
           tags: jenkins-plus:dev
+
+      - name: Dockle
+        uses: erzz/dockle-action@v1
+        with:
+          image: jenkins-plus:dev
+          exit-code: '1'
+          failure-threshold: fatal
+
+      - name: Trivy
+        uses: aquasecurity/trivy-action@master
+        with:
+          image-ref: jenkins-plus:dev
+          format: table
+          exit-code: '1'
+          ignore-unfixed: true
+          vuln-type: 'os,library'
+          security: 'CRITICAL,HIGH'
