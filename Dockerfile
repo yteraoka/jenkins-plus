@@ -3,11 +3,10 @@ FROM jenkins/jenkins:2.366-jdk11
 USER root
 
 # pipefail を指定可能にする
-SHELL ["/bin/bash", "-c"]
+SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # install docker
-RUN set -o pipefail \
- && apt-get update \
+RUN apt-get update \
  && apt-get upgrade -y \
  && apt-get install -y --no-install-recommends ca-certificates curl gnupg lsb-release \
  && mkdir -p /etc/apt/keyrings \
