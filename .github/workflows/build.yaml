@@ -28,7 +28,7 @@ jobs:
         with:
           images: ghcr.io/yteraoka/jenkins-plus
           tags: |
-            type=semver,priority=1200
+            type=semver,pattern={{version}},priority=1200
             type=ref,event=tag
             type=ref,event=pr
             type=sha,priority=1000
